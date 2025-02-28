@@ -1,3 +1,4 @@
+import { EstoqueVeiculos } from "./classes/EstoqueVeiculos";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
@@ -72,3 +73,23 @@ gerenciadorMotos.listarVeiculos();
 // Exemplo de remoção
 gerenciadorCarros.remover(carro1);
 gerenciadorCarros.listarVeiculos();
+
+//Aula 27/02 - Exercicio 2
+// Criando os estoques
+const estoqueCarros = new EstoqueVeiculos<Carro>();
+const estoqueMotos = new EstoqueVeiculos<Moto>();
+
+// Testando adição de estoque
+estoqueCarros.adicionarEstoque("Corolla", 3);
+estoqueCarros.adicionarEstoque("Civic", 2);
+estoqueCarros.adicionarEstoque("Renegade", 1);
+
+// Testando consulta e remoção
+estoqueCarros.consultarEstoque("Corolla");
+estoqueCarros.removerEstoque("Corolla", 2);
+estoqueCarros.consultarEstoque("Corolla");
+
+// Testando adição de estoque
+estoqueMotos.adicionarEstoque("CB500", 4);
+estoqueMotos.adicionarEstoque("MT-07", 2);
+estoqueMotos.adicionarEstoque("Elite", 3);
