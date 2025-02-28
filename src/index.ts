@@ -2,6 +2,8 @@ import { EstoqueVeiculos } from "./classes/EstoqueVeiculos";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
+import { Veiculo } from "./interface/Veiculo";
+import { filtrarPorAno, filtrarPorModelo } from "./utils/FiltroVeiculos";
 
 // Aula 26/02 - Exercicio 1 
 // Criando um objeto do tipo Carro
@@ -81,7 +83,7 @@ const estoqueMotos = new EstoqueVeiculos<Moto>();
 
 // Testando adição de estoque
 estoqueCarros.adicionarEstoque("Corolla", 3);
-estoqueCarros.adicionarEstoque("Civic", 2);
+estoqueCarros.adicionarEstoque("Elite", 2);
 estoqueCarros.adicionarEstoque("Renegade", 1);
 
 // Testando consulta e remoção
@@ -89,7 +91,9 @@ estoqueCarros.consultarEstoque("Corolla");
 estoqueCarros.removerEstoque("Corolla", 2);
 estoqueCarros.consultarEstoque("Corolla");
 
-// Testando adição de estoque
-estoqueMotos.adicionarEstoque("CB500", 4);
-estoqueMotos.adicionarEstoque("MT-07", 2);
-estoqueMotos.adicionarEstoque("Elite", 3);
+
+//Aula 27/02 - Exercicio 3
+const listaVeiculos: Veiculo[] = [carro1, carro2, moto1, moto2]
+
+console.log(filtrarPorAno(listaVeiculos, 2022));
+console.log(filtrarPorModelo(listaVeiculos, "Corolla"));
