@@ -4,6 +4,7 @@ import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 import { Veiculo } from "./interface/Veiculo";
 import { filtrarPorAno, filtrarPorModelo } from "./utils/FiltroVeiculos";
+import { gerarRelatorio } from "./utils/RelatorioVeiculos";
 
 // Aula 26/02 - Exercicio 1 
 // Criando um objeto do tipo Carro
@@ -97,3 +98,6 @@ const listaVeiculos: Veiculo[] = [carro1, carro2, moto1, moto2]
 
 console.log(filtrarPorAno(listaVeiculos, 2022));
 console.log(filtrarPorModelo(listaVeiculos, "Corolla"));
+
+//Aula 27/02 - Exercicio 4
+console.log(gerarRelatorio(listaVeiculos));
